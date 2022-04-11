@@ -1,57 +1,42 @@
 # 这是帮助您开始使用操作的基本工作流程
-
-name: Deploy
+name: Pages
 
 # 控制工作流何时运行
 on:
   # 在推送或拉取请求事件上触发工作流，但仅针对主分支
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-
-  # 允许您从“操作”选项卡手动运行此工作流程
-  workflow_dispatch:
+    branches:
+      - main # default branch
 
 # 一个工作流运行由一个或多个可以顺序或并行运行的作业组成
 jobs:
-  # 此工作流包含一个名为“build”的作业
-  build:
+  # 此工作流包含一个名为“pages”的作业
+  pages:
     # 作业将运行的运行器类型
     runs-on: ubuntu-latest
-    name: A job to deploy blog.
-
     # Steps 表示将作为作业的一部分执行的一系列任务
     steps:
       # 在 $GITHUB_WORKSPACE 下签出您的存储库，以便您的工作可以访问它
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
         with:
-          submodules: true # 签出私有子模块(主题或其他)。
-
+          node-version: "16"
       # 缓存依赖项以加速工作流。(GitHub 将删除所有7天内未被访问的缓存条目。)
-      - name: Cache node modules
-        uses: actions/cache@v1
-        id: cache
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.OS }}-npm-cache
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-
+        run: npm install
+      - name: Build
+        run: npm run build
       # 部署Hexo博客网站。
       - name: Deploy
-        id: deploy
-        uses: sma11black/hexo-action@v1.0.4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          # user_name: your github username # (或删除此输入设置以使用机器人帐户)
-          # user_email: your github useremail # (或删除此输入设置以使用机器人帐户)
-          # commit_msg: ${{ github.event.head_commit.message }} # (或删除此输入设置以使用十六进制默认设置)
-      # Use the output from the `deploy` step(use for test action)
-      - name: Get the output
-        run: |
-          echo "${{ steps.deploy.outputs.notify }}"
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
