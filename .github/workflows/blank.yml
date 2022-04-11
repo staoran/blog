@@ -48,9 +48,9 @@ jobs:
         uses: sma11black/hexo-action@v1.0.4
         with:
           deploy_key: ${{ secrets.DEPLOY_KEY }}
-          user_name: your github username # (或删除此输入设置以使用机器人帐户)
-          user_email: your github useremail # (或删除此输入设置以使用机器人帐户)
-          commit_msg: ${{ github.event.head_commit.message }} # (或删除此输入设置以使用十六进制默认设置)
+          # user_name: your github username # (或删除此输入设置以使用机器人帐户)
+          # user_email: your github useremail # (或删除此输入设置以使用机器人帐户)
+          # commit_msg: ${{ github.event.head_commit.message }} # (或删除此输入设置以使用十六进制默认设置)
       # Use the output from the `deploy` step(use for test action)
       - name: Get the output
         run: |
