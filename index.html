@@ -127,6 +127,63 @@
     
     
     <article
+  id="post-Charles 注册、 SSL 与 Android"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/blog/2022/04/12/Charles%20%E6%B3%A8%E5%86%8C%E3%80%81%20SSL%20%E4%B8%8E%20Android/"
+    >Charles 注册、 SSL 与 Android</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/blog/2022/04/12/Charles%20%E6%B3%A8%E5%86%8C%E3%80%81%20SSL%20%E4%B8%8E%20Android/" class="article-date">
+  <time datetime="2022-04-12T18:06:06.000Z" itemprop="datePublished">2022-04-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> / <a class="article-category-link" href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">工具使用</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>在这个全面 https 的时代，抓包工具注定绕不开与 SSL 相关的配置，特别是移动端的 app 抓包。<br>直入正题，首先点击 Help - SSL Proxying - Install Charles Root Certificate 安装证书。导入时选择存储到 本地计算机 - 手动浏览 选择 受信任的根证书颁发机构 。<br>然后在 Proxy 菜单中查看是否启用 Windows Proxy 。点击 SSL Proxying Settings… ，勾选 Enable SSL Proxying ， 并将 需要抓包的域名 加入 Include （支持通配符，如 *.qq.com，端口可以不填）。<br>最后检查 Proxy Settings 是否配置，勾选 Support HTTP&#x2F;2 和 Enable transparent HTTP proxying。<br>在未完成上面的配置前，遇到过两个错误，</p>
+<ol>
+<li>SSL Proxying not enabled for this host: enable in Proxy Settings, SSL locations</li>
+<li>You may need to configure your browser or application to trust the Charles Root Certificate. See SSL Proxying in the Help menu.</li>
+</ol>
+<p>第一个问题是因为未将域名 加入 Include 。<br>第二个问题是因为未在本机安装证书。<br>以上就是我的全部配置，Charles 版本是 4.6.2。<br>下面的东西不多说，懂得都懂。<br>Registered Name: <a target="_blank" rel="noopener" href="https://zhile.io/">https://zhile.io</a><br>License Key: 48891cf209c6d32bf4</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-hello-world"
   class="article article-type-post"
   itemscope
@@ -138,7 +195,7 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/blog/2022/04/11/hello-world/"
+  <a class="article-title" href="/blog/2022/04/12/hello-world/"
     >Hello World</a> 
 </h2>
  
@@ -147,8 +204,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/blog/2022/04/11/hello-world/" class="article-date">
-  <time datetime="2022-04-11T14:40:07.534Z" itemprop="datePublished">2022-04-11</time>
+      <a href="/blog/2022/04/12/hello-world/" class="article-date">
+  <time datetime="2022-04-12T10:07:15.487Z" itemprop="datePublished">2022-04-12</time>
 </a>    
     </div>
       
@@ -168,6 +225,53 @@
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
  
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
+  id="post-新的篇章"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/blog/2022/04/11/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/"
+    >新的篇章</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/blog/2022/04/11/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/" class="article-date">
+  <time datetime="2022-04-11T23:08:09.000Z" itemprop="datePublished">2022-04-11</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+   
       <!-- reward -->
       
     </div>

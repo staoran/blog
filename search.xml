@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Charles 注册、 SSL 与 Android</title>
+    <url>/blog/2022/04/12/Charles%20%E6%B3%A8%E5%86%8C%E3%80%81%20SSL%20%E4%B8%8E%20Android/</url>
+    <content><![CDATA[<p>在这个全面 https 的时代，抓包工具注定绕不开与 SSL 相关的配置，特别是移动端的 app 抓包。<br>直入正题，首先点击 Help - SSL Proxying - Install Charles Root Certificate 安装证书。导入时选择存储到 本地计算机 - 手动浏览 选择 受信任的根证书颁发机构 。<br>然后在 Proxy 菜单中查看是否启用 Windows Proxy 。点击 SSL Proxying Settings… ，勾选 Enable SSL Proxying ， 并将 需要抓包的域名 加入 Include （支持通配符，如 *.qq.com，端口可以不填）。<br>最后检查 Proxy Settings 是否配置，勾选 Support HTTP&#x2F;2 和 Enable transparent HTTP proxying。<br>在未完成上面的配置前，遇到过两个错误，</p>
+<ol>
+<li>SSL Proxying not enabled for this host: enable in Proxy Settings, SSL locations</li>
+<li>You may need to configure your browser or application to trust the Charles Root Certificate. See SSL Proxying in the Help menu.</li>
+</ol>
+<p>第一个问题是因为未将域名 加入 Include 。<br>第二个问题是因为未在本机安装证书。<br>以上就是我的全部配置，Charles 版本是 4.6.2。<br>下面的东西不多说，懂得都懂。<br>Registered Name: <a href="https://zhile.io/">https://zhile.io</a><br>License Key: 48891cf209c6d32bf4</p>
+]]></content>
+      <categories>
+        <category>学习笔记</category>
+        <category>工具使用</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
-    <url>/blog/2022/04/11/hello-world/</url>
+    <url>/blog/2022/04/12/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -17,5 +32,10 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>新的篇章</title>
+    <url>/blog/2022/04/11/%E6%96%B0%E7%9A%84%E7%AF%87%E7%AB%A0/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
