@@ -17,11 +17,12 @@
 
 # 主菜单导航
 menu:
-  # Home: /
-  # Archives: /archives
-  # Tags: /tags
-  # Categories: /categories
-  #XXX: /xxx
+  主页: /
+  归档: /archives
+  分类: /categories
+  标签: /tags
+  友链: /friends
+  关于我: /about
 
 # 网站图标
 # ---------------
@@ -41,19 +42,22 @@ pwa:
   # favicon_16_16: /favicon-16x16.png
   # mask_icon: /safari-pinned-tab.svg
 
-# 高亮 theme
+# 代码高亮主题
 # ---------------
-highlight_theme: default
+highlight_theme: default # default/darker/pale night/light/ocean
 
+# 代码换行
+# ---------------
 # code_word_wrap: true or false
 
-# 导航 settings
+# 社交图标
+# 在站点顶部设置一些你的社交图标。格式是图标名 前缀: url
 # 查看 fontawesome 网站中的 icon_name。
 # 并且你需要自己添加`fa`或`fab`前缀。
 # ---------------
-#social:
-#icon_name fa: url
-#icon_name fab: url
+social:
+  github fa: https://github.com/staoran
+  rss fa: /atom.xml
 
 # Algolia search
 # ---------------
@@ -66,7 +70,7 @@ algolia_search:
 # 详情请看文档: https://molunerfinn.com/hexo-theme-melody-doc/third-party-support.html#local-search
 # ---------------
 local_search:
-  enable: false
+  enable: true
 
 # MathJax
 # 详情请看文档: https://molunerfinn.com/hexo-theme-melody-doc/third-party-support.html#mathjax
@@ -84,7 +88,7 @@ katex:
     css: https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
   hide_scrollbar: true
 
-# Toggle fireworks (IE >= 10)
+# 烟花
 # ---------------
 fireworks: false
 
@@ -126,36 +130,45 @@ cdn:
     velocity: https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js
     velocity-ui: https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js
 
-# 顶部图设置
+# 头像
 # ---------------
 avatar:
 
-top_img: true # false 或 img 的 url
+# 顶部图
+# ---------------
+top_img: false # true false 或 img 的 url
 
+# 顶部图高度
+# ---------------
 top_img_height: 60 # 最佳范围：60 - 100
 
+# 文章相关项
+# 这个选项是用来显示文章的相关信息的。
+# ---------------
 post_meta:
-  date_type: created # created or updated  创建或更新
-  categories: true
-  tags: true
+  date_type: created # or updated 文章日期是创建日或者更新日
+  categories: true # or false 是否显示分类
+  tags: true # or false 是否显示标签
 
 # 详情请看文档: https://molunerfinn.com/hexo-theme-melody-doc/additional-package-support.html#word-counting
 wordcount:
-  enable: false
+  enable: true
 
 toc:
-  enable: true
-  # number: true
+  enable: true # or false
+  number: true # or false. 版本v1.5.6新增
 
+# 文章版权
+# ---------------
 post_copyright:
   enable: true
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  license: CC BY-NC-SA 4.0 # 协议名称
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/ # 协议说明地址
 
-# Please see doc for more details: https://molunerfinn.com/hexo-theme-melody-doc/theme-config.html#auto-excerpt
-# auto_excerpt:
-#   enable: false
-#   length: 150
+# 自动节选: https://molunerfinn.com/hexo-theme-melody-doc/theme-config.html#auto-excerpt
+auto_excerpt:
+  enable: true
+  length: 150
 
 # slide
 # For reveal.js config, see https://github.com/hakimel/reveal.js#configuration
@@ -175,23 +188,30 @@ slide:
   parallaxBackgroundVertical: null
   loop: false
   autoSlide: false
-  controlsBackArrows: 'faded'
-  controlsLayout: 'bottom-right' # Determines where controls appear, "edges" or "bottom-right"
+  controlsBackArrows: "faded"
+  controlsLayout: "bottom-right" # Determines where controls appear, "edges" or "bottom-right"
   progress: true
   showNotes: false
   autoPlayMedia: false
-  backgroundTransition: 'fade'
+  backgroundTransition: "fade"
 
-# QR_code:
-# - itemlist:
-#     img:
-#     text:
+# 文章相关二维码
+# ---------------
+QR_code:
+  - itemlist:
+      img: https://xxxx1.jpg
+      text: 支付宝打赏
+  - itemlist:
+      img: https://xxxx2.jpg
+      text: 微信打赏
 
-# adv:
-# enable: false
-# info:
+# 文章广告区
+# ---------------
+adv:
+  enable: false
+  info: # 你想展示的内容
 
-# Share System
+# 分享系统
 # ---------------
 addThis:
   enable: false
@@ -201,7 +221,7 @@ addThis:
 # enable: false
 # disabled_sites:
 
-# Comments System
+# 评论系统
 # ---------------
 disqus:
   enable: false
@@ -242,22 +262,27 @@ disqus:
 #   guest_info: nick,mail,link #valine comment header inf
 
 # vssue:
-  # enable: false # Set to true to enable
-  # platform: github-v4
-  # owner:
-  # repo:
-  # clientId:
-  # clientSecret: # only required for some of the platforms
-  # autoCreateIssue: false # Auto create issue on platform (github/...)
-  # baseURL: "" # For self-hosted gitlab/bitbucket only, see here: https://vssue.js.org/options/#baseurl
-  # perPage: 10 # How much comment/page
-  # labels: 'Vssue'
+# enable: false # Set to true to enable
+# platform: github-v4
+# owner:
+# repo:
+# clientId:
+# clientSecret: # only required for some of the platforms
+# autoCreateIssue: false # Auto create issue on platform (github/...)
+# baseURL: "" # For self-hosted gitlab/bitbucket only, see here: https://vssue.js.org/options/#baseurl
+# perPage: 10 # How much comment/page
+# labels: 'Vssue'
 
-# Footer Settings
+# 展示你站点起始时间的选项。它位于页面的最底部。
 # ---------------
-since: 2013
+since: 2022
 
-# footer_custom_text: put custom text directly or put hitokoto to fetch random texts
+# 页脚自定义文本，
+# 通常你可以在这里写ICP备案号、码云声明文本等。支持HTML。
+# 如果你配置成 hitokoto 那么底部文字将会生成随机的谚语，可以查看例子：https://blog.k1yoshi.com/
+# ---------------
+# footer_custom_text: Hi, welcome to my <a href="https://molunerfinn.com">blog</a>!
+footer_custom_text: hitokoto
 
 ICP:
   enable: false
@@ -280,7 +305,7 @@ busuanzi:
   page_pv_header: <i class="fa fa-file"></i>
   page_pv_footer:
 
-# canvas_ribbon
+# 彩带
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
@@ -289,51 +314,59 @@ canvas_ribbon:
   zIndex: -1
   click_to_change: false
 
-# Sidebar Settings
+# 友链
 # ---------------
-# links_title: Links
-# links:
-# Name: url
+links_title: Links # 配置友链的标题文字
+links:
+  Molunerfinn: https://molunerfinn.com # 名称：URL
+  GitHub: https://github.com/staoran
+  码云: https://gitee.com/taomail
+  Hexo官网: https://hexo.io
 
 # Follow Me Button
-# follow:
-#   enable: true
-#   url: ''
-#   text: ''
+follow:
+  enable: true
+  url: "https://github.com/staoran"
+  text: "Follow Me"
 
-# controls the sidebar showing or hidden in different pages
+# 侧边栏展示控制
+# all: 所有的页面都会自动展示侧边栏
+# index: 只有首页会自动展示侧边栏
+# post: 只有文章页会自动展示侧边栏
+# index-none: 只有首页不会自动展示侧边栏
+# post-none: 只有文章页不会自动展示侧边栏
+# hidden: 所有的页面都不会自动展示侧边栏
 sidebar_display: post # all/index/post/index-none/post-none/hidden
 
-# Ads
+# 谷歌广告
 # ---------------
-# Google Adsense
 google_adsense:
   enable: false
   js: //pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client: ca-pub-...........
   enable_page_level_ads: true
 
-# Google Webmaster tools verification setting
+# Google 站长工具验证设置
 # See: https://www.google.com/webmasters/
 google_site_verification:
 
-# Bing Webmaster tools verification setting
+# Bing 站长工具验证设置
 # See: https://www.bing.com/webmaster/
 bing_site_verification:
 
-# Yandex Webmaster tools verification setting
+# Yandex 站长工具验证设置
 # See: https://webmaster.yandex.ru/
 #yandex_site_verification:
 
-# Baidu Webmaster tools verification setting
+# Baidu 站长工具验证设置
 # See: https://ziyuan.baidu.com/site/
 baidu_site_verification:
 
-# 360 Webmaster tools verification setting
+# 360 站长工具验证设置
 # see http://zhanzhang.so.com/
 qihu_site_verification:
 
-# avoid baidu transformation
+# 避免百度改造
 disable_baidu_transformation: true
 
 # 404 Page SubTitle

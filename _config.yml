@@ -8,7 +8,7 @@ subtitle: ""
 description: ""
 keywords:
 author: Tao
-language: zh-CN
+language: zh-Hans
 timezone: ""
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: ayer
+theme: melody
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -119,7 +119,8 @@ deploy:
 search:
   path: search.xml
   field: post
-  format: html
+  content: true
+  template: ./search.xml
 
 feed:
   type: atom
