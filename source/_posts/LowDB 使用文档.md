@@ -1,12 +1,16 @@
 ---
 title: LowDB 使用文档
 date: 2022-04-12 22:53:48
-updated: 2022-04-12 22:53:53
+updated: 2022-04-12 23:07:45
 categories:
   - [学习笔记, 前端备忘]
 tags:
-  - [前端, LowDB, 数据持久化]
+  - 前端
+  - LowDB
+  - 数据持久化
 ---
+
+> lowdb 是基于[lodash](https://lodash.com/docs)构建的，因此我们可以使用任何 lodash 强大的函数。并且我们可以串联使用。
 
 ```typescript
 // 引入 LowDB
@@ -100,8 +104,6 @@ db.get("posts").map("id").value();
 // 另一种取指定数据
 db.get("posts[0].id").value();
 ```
-
-> lowdb 是基于[lodash](https://lodash.com/docs)构建的，因此我们可以使用任何 lodash 强大的函数。并且我们可以串联使用。
 
 部分参考：
 [https://www.cnblogs.com/tugenhua0707/p/11403202.html](https://www.cnblogs.com/tugenhua0707/p/11403202.html)

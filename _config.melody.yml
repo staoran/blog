@@ -17,12 +17,12 @@
 
 # 主菜单导航
 menu:
-  主页: /
-  归档: /archives
-  分类: /categories
-  标签: /tags
-  友链: /friends
-  关于我: /about
+  主页: /blog
+  归档: /blog/archives
+  分类: /blog/categories
+  标签: /blog/tags
+  友链: /blog/friends
+  关于我: /blog/about
 
 # 网站图标
 # ---------------
